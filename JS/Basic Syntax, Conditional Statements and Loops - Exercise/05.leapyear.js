@@ -7,4 +7,5 @@ function leapYear(year) {
         console.log("no");
     }
 
-} leapYear(2003)
+} 
+leapYear(2003)
