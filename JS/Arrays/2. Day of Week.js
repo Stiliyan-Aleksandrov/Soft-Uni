@@ -1,7 +1,5 @@
 function solve(index) {
-    let days = [
-        `Monday`,
-        `Tuesdayt`,
+    let days = [`Monday`,`Tuesday`,
         `Wednesday`,
         `Thursday`,
         `Friday`,
