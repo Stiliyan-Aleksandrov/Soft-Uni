@@ -4,7 +4,7 @@ function solve(n, nums) {
         result[i] = nums[i];
     }
     let reversed = [];
-    for (let i = 2; i >= 0; i--) {
+    for (let i = n-1; i >= 0; i--) {
         reversed[reversed.length] = result[i];
     }
     console.log(reversed.join(` `));
