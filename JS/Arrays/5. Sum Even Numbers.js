@@ -1,7 +1,7 @@
 function solve(arr) {
     let sum = 0;
     for (let i = 0; i < arr.length; i++) {
-        let num=Number(arr[i]);
+        let num=Number(arr[i]);æ
         if (num % 2 == 0) {
             sum += num;
         }
