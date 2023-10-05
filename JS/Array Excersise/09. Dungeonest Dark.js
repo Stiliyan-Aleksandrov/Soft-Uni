@@ -1,33 +1,37 @@
 function DungeonestDark(arr) {
     let roomsInfo = arr[0];
-    let rooms = roomsInfo.split(`|`)
+    let rooms = roomsInfo.split('|');
     let health = 100;
     let coins = 0;
     let bestRoom = 1;
+    
     for (let room of rooms) {
-        let tokens = room.split(` `);
+        let tokens = room.split(' ');
         let command = tokens[0];
         let num = Number(tokens[1]);
-        if (command == `potion`) {
-            let newHP = health + num <= 100 ? num : 100 - health;
+        
+        if (command === 'potion') {
+            let newHP = Math.min(100 - health, num);
             health += newHP;
             console.log(`You healed for ${newHP} hp.`);
             console.log(`Current health: ${health} hp.`);
-        } else if (command == `chest`) {
+        } else if (command === 'chest') {
             coins += num;
-            console.log(`You found ${coins} coins.`);
+            console.log(`You found ${num} coins.`);
         } else {
             health -= num;
+            
             if (health > 0) {
                 console.log(`You slayed ${command}.`);
             } else {
                 console.log(`You died! Killed by ${command}.`);
                 console.log(`Best room: ${bestRoom}`);
-                break;
+                return; // Exit the loop when the player dies
             }
         }
         bestRoom++;
     }
+    
     if (health > 0) {
         console.log("You've made it!");
         console.log(`Coins: ${coins}`);
