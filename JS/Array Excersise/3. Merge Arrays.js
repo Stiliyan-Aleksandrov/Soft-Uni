@@ -11,5 +11,5 @@ function mergeArrs(arr1, arr2) {
             mergedArr.push(concatenation)
         }
     }
-    console.log(mergedArr.push(concatenation));
+    console.log(mergedArr.join(" - "));
 }
